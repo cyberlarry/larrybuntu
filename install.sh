@@ -48,7 +48,6 @@ flatpak install -y flathub com.jetbrains.PyCharm-Community
 
 # Audio production tools
 apt install -y ardour
-flatpak install -y flathub com.reaper.Reaper
 
 # Video and media
 apt install -y obs-studio vlc handbrake

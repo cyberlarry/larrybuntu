@@ -39,7 +39,7 @@ apt install -y flatpak gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Creative tools
-apt install -y gimp inkscape scribus blender lightburn
+apt install -y gimp inkscape scribus blender
 flatpak install -y flathub org.kde.krita
 
 # IDEs and developer tools

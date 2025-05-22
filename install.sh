@@ -9,8 +9,8 @@ apt update && apt upgrade -y
 add-apt-repository universe -y
 apt update
 
-# Install Pantheon-like Desktop Environment
-apt install -y gala wingpanel lightdm plank pantheon-terminal gnome-control-center
+# Install XFCE Desktop Environment with customizations
+apt install -y xfce4 xfce4-goodies lightdm plank arc-theme papirus-icon-theme gnome-control-center
 
 # Set LightDM as the default display manager
 echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager

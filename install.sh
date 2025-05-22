@@ -5,12 +5,12 @@ set -e
 # Update and upgrade system
 apt update && apt upgrade -y
 
-# Enable Universe repository for Pantheon packages
+# Enable Universe repository for Pantheon-like packages
 add-apt-repository universe -y
 apt update
 
-# Install Pantheon Desktop Environment
-apt install -y pantheon pantheon-terminal switchboard switchboard-plug-* wingpanel indicator-application lightdm
+# Install Pantheon-like Desktop Environment
+apt install -y gala wingpanel lightdm plank pantheon-terminal gnome-control-center
 
 # Set LightDM as the default display manager
 echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager

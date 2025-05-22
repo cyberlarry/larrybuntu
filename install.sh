@@ -5,14 +5,15 @@ set -e
 # Update and upgrade system
 apt update && apt upgrade -y
 
-# Install GUI (Pantheon Desktop from Elementary OS)
-add-apt-repository ppa:elementary-os/stable -y
+# Enable Universe repository for Pantheon packages
+add-apt-repository universe -y
 apt update
-apt install -y pantheon-terminal elementary-theme elementary-icon-theme elementary-default-settings elementary-desktop
 
-# Set Pantheon as the default session
+# Install Pantheon Desktop Environment
+apt install -y pantheon pantheon-terminal switchboard switchboard-plug-* wingpanel indicator-application lightdm
+
+# Set LightDM as the default display manager
 echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
-apt install -y lightdm
 systemctl enable lightdm
 
 # Install ZFS support

@@ -62,13 +62,13 @@ apt install -y p7zip-full
 # Text editor
 apt install -y notepadqq
 
-# WineHQ installation for Wine + Winetricks
+# WineHQ installation for Wine + Winetricks (Ubuntu 24.04)
 dpkg --add-architecture i386
 mkdir -pm755 /etc/apt/keyrings
 wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/$(lsb_release -cs)/winehq-$(lsb_release -cs).sources
+wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
 apt update
-apt install -y --install-recommends winehq-staging winetricks
+apt install -y --install-recommends winehq-stable winetricks
 
 # Bottles
 flatpak install -y flathub com.usebottles.bottles

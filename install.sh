@@ -81,7 +81,7 @@ apt install -y build-essential linux-headers-$(uname -r)
 apt install -y steam
 
 # Miscellaneous
-apt install -y flameshot electrum
+apt install -y flameshot
 flatpak install -y flathub com.spotify.Client
 flatpak install -y flathub tv.plex.PlexDesktop
 

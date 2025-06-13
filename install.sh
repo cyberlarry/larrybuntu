@@ -12,6 +12,23 @@ apt update
 # Install GNOME Desktop Environment
 apt install -y ubuntu-desktop
 
+echo "Installing NoMachine..."
+wget -q https://download.nomachine.com/download/9.0/Linux/nomachine_9.0.188_11_amd64.deb -O /tmp/nomachine.deb
+sudo dpkg -i /tmp/nomachine.deb || sudo apt-get install -f -y
+rm /tmp/nomachine.deb
+sudo sed -i 's|DefaultDesktopCommand.*|DefaultDesktopCommand "/usr/bin/gnome-session"|' /usr/NX/etc/node.cfg
+
+
+# === 2. Install NVIDIA driver for RTX‑4000 ===
+echo "Installing NVIDIA drivers for RTX‑4000..."
+
+# Enable non-free (Debian/Ubuntu)
+sudo sed -i 's/^deb /&contrib non-free /' /etc/apt/sources.list || true
+sudo apt-get update
+
+# Install prerequisites & NVIDIA driver via distro repo
+sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms nvidia-driver
+
 # Install ZFS support
 apt install -y zfsutils-linux
 
